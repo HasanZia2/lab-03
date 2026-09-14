@@ -13,6 +13,8 @@ class CityRepository {
         get() = _cities
 
     fun addCity(city: City) {
-        _cities.add(city)
+        if (_cities.indexOf(city) == -1) {
+            _cities.add(city)
+        }
     }
 }
