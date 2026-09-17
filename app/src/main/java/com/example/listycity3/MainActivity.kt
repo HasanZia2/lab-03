@@ -8,8 +8,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.ui.Modifier
-import com.example.listycity3.CityListScreen
-import com.example.listycity3.CityRepository
 import com.example.listycity3.ui.theme.ListyCity3Theme
 
 class MainActivity : ComponentActivity() {
@@ -23,6 +21,7 @@ class MainActivity : ComponentActivity() {
                     CityListScreen(
                         cities = cityRepository.cities,
                         onAddCity = { cityRepository.addCity(it) },
+                        onEditCity = { oldCity, newCity -> cityRepository.editCity(oldCity, newCity) },
                         modifier = Modifier.padding(innerPadding)
                     )
                 }

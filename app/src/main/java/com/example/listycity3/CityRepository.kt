@@ -17,4 +17,11 @@ class CityRepository {
             _cities.add(city)
         }
     }
+
+    fun editCity(originalCity: City, editedCity: City) {
+        if (_cities.contains(originalCity) && !_cities.contains(editedCity)) {
+            val index = _cities.indexOf(originalCity)
+            _cities[index] = editedCity
+        }
+    }
 }
